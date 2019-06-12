@@ -1,17 +1,14 @@
 <template lang="pug">
-  <div id="app">
-    router-view
-  </div>
+  .wrapper
+    .row
+      .column-phablet-1-2.column-laptop-1-3.m-b-30(v-for="item in news")
+        Article(:article="item")
 </template>
-
 <script>
-import axios from 'axios';
-import HelloWorld from './components/HelloWorld.vue'
-import Article from './components/Article.vue'
-export default {
-  name: 'app',
+import axios from 'axios'
+import Article from './Article.vue'
+export default{
   components: {
-    HelloWorld,
     Article
   },
   data: function(){
@@ -39,15 +36,5 @@ export default {
     })
   }
 }
+  
 </script>
-
-<style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>
