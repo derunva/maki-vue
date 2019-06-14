@@ -29,14 +29,14 @@ export default {
     }
   },
   mounted(){
-    axios.get('http://localhost:4000/articles')
-    .then((data) => {
-      console.log(data)
-      this.news = data.data.docs
-    })
-    .catch((errors) => {
-      console.log(errors)
-    })
+    // axios.get('http://localhost:4000/articles')
+    // .then((data) => {
+    //   console.log(data)
+    //   this.news = data.data.docs
+    // })
+    // .catch((errors) => {
+    //   console.log(errors)
+    // })
   }
 }
 </script>
