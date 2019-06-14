@@ -1,6 +1,6 @@
 <template lang="pug">
   #news_page
-    ArticleListing(:limit="6" :paginate="true")
+    ArticleListing(:limit="2" :paginate="true")
 </template>
 <script>
   import ArticleListing from '../components/ArticleListing.vue'
