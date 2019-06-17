@@ -1,5 +1,6 @@
 <template>
   <div class="home">
+    <Breadcrumbs></Breadcrumbs>
     <h1>{{article.title}}</h1>
     <data>{{article.pub_date | formatDate}}</data>
   </div>
@@ -7,13 +8,16 @@
 
 <script>
 // @ is an alias to /src
-
+import Breadcrumbs from '../components/Breadcrumbs.vue'
 import axios from 'axios'
 export default {
   data: function(){
     return {
       article: {}
     }
+  },
+  components:{
+    Breadcrumbs
   },
   mounted(){
     let id = this.$route.params.id;
