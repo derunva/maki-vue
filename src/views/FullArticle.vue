@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-    <Breadcrumbs></Breadcrumbs>
+    <Breadcrumbs :end_title="article.title"></Breadcrumbs>
     <h1>{{article.title}}</h1>
     <data>{{article.pub_date | formatDate}}</data>
   </div>
