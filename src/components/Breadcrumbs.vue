@@ -1,12 +1,11 @@
 <template lang="pug">
   #breadcrumbs
-    |breadcrumbs
-    ul
-      li(v-for="item, index in routes")
+    ul.breadcrumbs.m-b-40
+      li(v-for="item, index in routes" v-if="routes.length-1 != index")
         router-link(to="/" v-if="index == 0") Головна
         router-link(
           :to="'/'+calcutePath(index)" 
-          v-if="index != 0 && routes.length-1 != index"
+          v-if="index != 0"
         ) {{item}} 
       li
         span(v-if="end_title") {{end_title}}
@@ -38,3 +37,25 @@
     }
   }
 </script>
+<style scoped lang="scss">
+  .breadcrumbs{
+    display: flex;
+    flex-wrap: wrap;
+    a{
+      color: inherit;
+    }
+    li{
+      display: flex;
+      align-items: flex-end;
+      &:after{
+        content:'>>';
+        margin: 0 5px;
+      }
+      &:last-child{
+        &:after{
+          display: none;
+        }
+      }
+    }
+  }
+</style>
