@@ -1,6 +1,8 @@
 <template lang="pug">
   <div class="home">
     .wrapper
+      ProductsCart
+    .wrapper
       .row
         .column-laptop-3-4
           ProductsListing
@@ -13,11 +15,13 @@
 // @ is an alias to /src
 import ArticleListing from '../components/ArticleListing.vue'
 import ProductsListing from '../components/ProductsListing.vue'
+import ProductsCart from '../components/ProductsCart.vue'
 export default {
   name: 'home',
   components: {
     ArticleListing,
-    ProductsListing
+    ProductsListing,
+    ProductsCart
   }
 }
 </script>

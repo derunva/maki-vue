@@ -16,7 +16,7 @@
             .product__price
               |{{item.price}}  руб.
           .product__button
-            a(href="#" data-price=rndPrice).hover-order
+            a(@click.prevent="addToCard(item)" data-price=rndPrice).hover-order
               |ЗАКАЗАТЬ
       Pagination(v-if="paginate" :pagination="{page: page, pages:pages}")
 </template>
@@ -38,6 +38,11 @@
       Pagination
     },
     methods: {
+      addToCard(item){
+        console.log(this.$store)
+        this.$store.commit('pushToCard', item)
+        console.log(this.$store)
+      },
       getProducts(){
         console.log(this.$route, 'route')
         var path = 'http://localhost:4000/goods'
