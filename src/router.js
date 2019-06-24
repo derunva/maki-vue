@@ -4,6 +4,7 @@ import Home from './views/Home.vue'
 import App from './App.vue'
 import FullArticle from './views/FullArticle.vue'
 import NewsPage from './views/NewsPage.vue'
+import Order from './views/Order.vue'
 Vue.use(Router)
 
 export default new Router({
@@ -24,6 +25,11 @@ export default new Router({
       path: '/news/:id',
       name: 'news',
       component: FullArticle
+    },
+    {
+      path: '/order',
+      name: 'order',
+      component: Order
     }
     // {
     //   path: '/about',
